@@ -61,6 +61,9 @@ def sex_selection():
 def age_selection(data):
     print("\033c")
     age = int(input("Please enter an age that you want to look at: "))
+    while not age_validation(age):
+        print("That is not an acceptable age")
+        age = int(input("Please enter an age that you want to look at: "))
     data = data[data.Age >= age]
     geography(data)
 
@@ -77,6 +80,8 @@ def geography(data):
         option = int(input("What is your choice? "))
     if option == 1:
         data = data[data.geography == "village"]
+        print(data.head())
+        input("Press enter to continue ")
         choose_topic(data)
     elif option == 2:
         data = data[data.geography == "city"]
