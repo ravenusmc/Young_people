@@ -60,6 +60,9 @@ def sex_selection():
 #they are looking at.
 def age_selection(data):
     print("\033c")
+    age = int(input("Please enter an age that you want to look at: "))
+    data = data[data.Age >= age]
+    geography(data)
 
 #This function will let the user decide if they want to look at people
 #in the country, city or both
