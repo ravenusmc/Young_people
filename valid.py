@@ -10,3 +10,9 @@ def age_validation(age):
     return False
   else:
     return True
+
+def music_valid(choice):
+  if choice > 10 or choice < 1:
+    return False
+  else:
+    return True 

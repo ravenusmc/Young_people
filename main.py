@@ -4,6 +4,7 @@ import numpy as np
 
 #Importing files for use
 from valid import *
+from music import *
 
 #This is the main function which will start the program.
 def main():
@@ -80,8 +81,6 @@ def geography(data):
         option = int(input("What is your choice? "))
     if option == 1:
         data = data[data.geography == "village"]
-        print(data.head())
-        input("Press enter to continue ")
         choose_topic(data)
     elif option == 2:
         data = data[data.geography == "city"]
@@ -94,7 +93,11 @@ def geography(data):
 def choose_topic(data):
     print("\033c")
     print("1. Music")
-    print("2. Spending")
+    print("2. Movies")
+    print("3. School Subjects")
     option = int(input('What is your choice: '))
+    #while not valid_choice(option):
+    if option == 1:
+        music(data)
 
 main()
