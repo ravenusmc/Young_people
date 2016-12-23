@@ -3,6 +3,8 @@
 #Importing files for use
 from valid import *
 
+#This function will allow the user to select which aspect of music
+#that the user wants to see.
 def music(data):
     print("\033c")
     print("1. Country")
@@ -20,5 +22,27 @@ def music(data):
         print("That is not a valid selection")
         choice = int(input("What do you want to look at: "))
     if choice == 1:
-        data = data[[0]].head()
-        
+        data = data[[0]]
+        graph(data)
+
+
+#This function will graph the data.
+def graph(data):
+    print("\033c")
+    print("The graph will now be displayed")
+    input("Press Enter to continue")
+    count, rating = [], []
+    while count < 200:
+      test = ufo[ufo.Time.str.contains(value)]
+      date.append(value)
+      number = test.City.count()
+      year.append(int(number))
+      newValue = int(value)
+      newValue += 1
+      value = str(newValue)
+      count += 1
+    plt.plot(date, year, linewidth=2)
+    plt.title("UFO Sightings By Year", fontsize=24)
+    plt.xlabel("Year", fontsize=14)
+    plt.ylabel("Count", fontsize=12)
+    plt.show()
