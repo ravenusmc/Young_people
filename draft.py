@@ -9,6 +9,8 @@ data = pd.read_csv('responses.csv')
 data = data[data.Gender == "female"]
 data = data[data.geography == "city"]
 data = data[[0]]
+print(data)
+print(data.mean())
 #print(data.head())
 #print("The graph will now be displayed")
 #input("Press Enter to continue")
@@ -20,11 +22,11 @@ while count_value < 400:
     rating.append(rating_value)
     count.append(count_value)
     count_value += 1
-plt.plot(count, rating, linewidth=2)
-plt.title("Country Music", fontsize=24)
-plt.xlabel("Count", fontsize=14)
-plt.ylabel("Rating", fontsize=12)
-plt.show()
+# plt.plot(count, rating, linewidth=2)
+# plt.title("Country Music", fontsize=24)
+# plt.xlabel("Count", fontsize=14)
+# plt.ylabel("Rating", fontsize=12)
+# plt.show()
 
 
 #test = ufo[ufo.Time.str.contains(value)]
