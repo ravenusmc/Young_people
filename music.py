@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 #Importing files for use
 from valid import *
 
+#This class will hold all of the music functions. 
 class Music():
 
 #This function will allow the user to select which aspect of music
