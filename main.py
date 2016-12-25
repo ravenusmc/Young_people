@@ -98,6 +98,9 @@ def choose_topic(data):
     option = int(input('What is your choice: '))
     #while not valid_choice(option):
     if option == 1:
-        music(data)
+        music = Music()
+        music.music(data)
+        music.graph(data)
+        #music(data)
 
 main()
