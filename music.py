@@ -30,7 +30,6 @@ class Music():
             choice = int(input("What do you want to look at: "))
         if choice == 1:
             data = data[[0]]
-            #graph(data)
         elif choice == 2:
             data = data[[1]]
         elif choice == 3:
@@ -41,6 +40,14 @@ class Music():
             data = data[[4]]
         elif choice == 6:
             data = data[[5]]
+        elif choice == 7:
+            data = data[[6]]
+        elif choice == 8:
+            data = data[[7]]
+        elif choice == 9:
+            data = data[[8]]
+        elif choice == 10:
+            data = data[[9]]
 
 
     #This function will graph the data.
