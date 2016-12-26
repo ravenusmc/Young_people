@@ -33,6 +33,15 @@ class Music():
             #graph(data)
         elif choice == 2:
             data = data[[1]]
+        elif choice == 3:
+            data = data[[2]]
+        elif choice == 4:
+            data = data[[3]]
+        elif choice == 5:
+            data = data[[4]]
+        elif choice == 6:
+            data = data[[5]]
+
 
     #This function will graph the data.
     def graph(self, data):
