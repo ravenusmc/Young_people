@@ -9,11 +9,11 @@ from music import *
 #This is the main function which will start the program.
 def main():
     print("\033c")
-    print("------------------------")
-    print("-------Welcome to-------")
-    print("----Young People Info---")
-    print("------------------------")
-    input("Press enter to continue ")
+    print("\t\t\t------------------------")
+    print("\t\t\t-------Welcome to-------")
+    print("\t\t\t----Young People Info---")
+    print("\t\t\t------------------------")
+    input("\t\t\tPress enter to continue ")
     sex_selection()
 
 #This function will get the total number of individuals who did the survey
