@@ -31,6 +31,7 @@ def sex_selection():
     #Pulling in the data from the csv.
     data = pd.read_csv('responses.csv')
     total = get_total(data)
+    print("Sex Selection:")
     print("1. Look at data for males")
     print("2. Look at data for females")
     print("3. Look at data for both males and females")
@@ -43,16 +44,22 @@ def sex_selection():
         data = data[data.Gender == "male"]
         count = data.Gender.value_counts()
         male_value = count.iat[0]
+        print("\033c")
         print('You choose to look at data for males')
-        print('Out of', total, 'people there are', male_value, 'males.')
+        print()
+        print('There are', male_value, 'females', 'out of', total, 'people')
+        print()
         input("Press enter to continue ")
         age_selection(data)
     elif option == 2:
         data = data[data.Gender == "female"]
         count = data.Gender.value_counts()
         female_value = count.iat[0]
+        print("\033c")
         print('You choose to look at data for females')
-        print('Out of', total, 'people there are', female_value, 'females.')
+        print()
+        print('There are', female_value, 'females', 'out of', total, 'people')
+        print()
         input("Press enter to continue ")
         age_selection(data)
     elif option == 3:
@@ -62,6 +69,7 @@ def sex_selection():
 #they are looking at.
 def age_selection(data):
     print("\033c")
+    print("Age selection screen")
     age = int(input("Please enter an age that you want to look at: "))
     while not age_validation(age):
         print("That is not an acceptable age")
@@ -73,6 +81,7 @@ def age_selection(data):
 #in the country, city or both
 def geography(data):
     print("\033c")
+    print("Please select where you want to see data from")
     print("1. Village")
     print("2. City")
     print("3. Both")
@@ -105,5 +114,8 @@ def choose_topic(data):
     elif option == 2:
         movies = Movies()
         movies.movie_selection(data)
+        movies.graph(data)
+    elif option == 3:
+        subjects = Subjects()
 
 main()

@@ -15,4 +15,16 @@ def music_valid(choice):
   if choice > 10 or choice < 1:
     return False
   else:
-    return True 
+    return True
+
+def movie_valid(choice):
+    if choice > 11 or choice < 1:
+        return False
+    else:
+        return True
+
+def subjects_valid(choice):
+    if choice > 12 or choice < 1:
+        return False
+    else:
+        return True

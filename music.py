@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 #Importing files for use
 from valid import *
 
-#This class will hold all of the music functions. 
+#This class will hold all of the music functions.
 class Music():
 
 #This function will allow the user to select which aspect of music
@@ -64,7 +64,7 @@ class Music():
             count.append(count_value)
             count_value += 1
         plt.plot(count, rating, linewidth=2)
-        plt.title("Country Music", fontsize=24)
+        plt.title("Music", fontsize=24)
         plt.xlabel("Count", fontsize=14)
         plt.ylabel("Rating", fontsize=12)
         plt.show()
