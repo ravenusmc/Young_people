@@ -5,6 +5,7 @@ import numpy as np
 #Importing files for use
 from valid import *
 from music import *
+from movies import *
 
 #This is the main function which will start the program.
 def main():
@@ -101,6 +102,8 @@ def choose_topic(data):
         music = Music()
         music.music(data)
         music.graph(data)
-        #music(data)
+    elif option == 2:
+        movies = Movies()
+        movies.movie_selection(data)
 
 main()
