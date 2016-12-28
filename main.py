@@ -6,6 +6,7 @@ import numpy as np
 from valid import *
 from music import *
 from movies import *
+from subjects import *
 
 #This is the main function which will start the program.
 def main():
@@ -116,6 +117,8 @@ def choose_topic(data):
         movies.movie_selection(data)
         movies.graph(data)
     elif option == 3:
-        subjects = Subjects()
+        subject = Subjects()
+        subject.subject_selection(data)
+
 
 main()

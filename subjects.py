@@ -28,3 +28,11 @@ class Subjects():
         while not subjects_valid(choice):
             print("That was not a valid selection!")
             choice = int(input("What do you want to look at: "))
+        if choice == 1:
+            data = data[[21]]
+        if choice == 2:
+            data = data[[22]]
+        if choice == 3:
+            data = data[[23]]
+        if choice == 4:
+            data = data[[24]]
