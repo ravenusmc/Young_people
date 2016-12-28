@@ -119,6 +119,7 @@ def choose_topic(data):
     elif option == 3:
         subject = Subjects()
         subject.subject_selection(data)
+        subject.graph(data)
 
 
 main()
