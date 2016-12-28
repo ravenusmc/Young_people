@@ -7,6 +7,7 @@ from valid import *
 from music import *
 from movies import *
 from subjects import *
+from activities import *
 
 #This is the main function which will start the program.
 def main():
@@ -106,6 +107,7 @@ def choose_topic(data):
     print("1. Music")
     print("2. Movies")
     print("3. School Subjects")
+    print("4. Activities")
     option = int(input('What is your choice: '))
     #while not valid_choice(option):
     if option == 1:
@@ -120,6 +122,8 @@ def choose_topic(data):
         subject = Subjects()
         subject.subject_selection(data)
         subject.graph(data)
+    elif option == 4:
+        activity = Activities()
 
 
 main()
