@@ -8,6 +8,7 @@ from music import *
 from movies import *
 from subjects import *
 from activities import *
+from fear import *
 
 #This is the main function which will start the program.
 def main():
@@ -108,6 +109,8 @@ def choose_topic(data):
     print("2. Movies")
     print("3. School Subjects")
     print("4. Activities")
+    print("5. Fears")
+    print("6. Other")
     option = int(input('What is your choice: '))
     #while not valid_choice(option):
     if option == 1:
@@ -126,6 +129,13 @@ def choose_topic(data):
         activity = Activities()
         activity.activity_selection(data)
         activity.graph(data)
+    elif option == 5:
+        fear = Fears()
+        fear.fear_selection(data)
+        fear.graph(data)
+    elif option == 6:
+        other = Others()
+
 
 
 main()
