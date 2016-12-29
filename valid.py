@@ -11,6 +11,12 @@ def age_validation(age):
   else:
     return True
 
+def valid_choice(option):
+    if option > 6 or option < 1:
+        return False
+    else:
+        return True
+
 def music_valid(choice):
   if choice > 10 or choice < 1:
     return False

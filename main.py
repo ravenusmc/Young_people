@@ -112,7 +112,9 @@ def choose_topic(data):
     print("5. Fears")
     print("6. Other")
     option = int(input('What is your choice: '))
-    #while not valid_choice(option):
+    while not valid_choice(option):
+        print("That is not a valid choice!")
+        option = int(input('What is your choice: '))
     if option == 1:
         music = Music()
         music.music(data)
@@ -136,8 +138,7 @@ def choose_topic(data):
     elif option == 6:
         other = Others()
         other.other_selection(data)
-        #other.graph(data)
-
+        other.graph(data)
 
 
 main()
