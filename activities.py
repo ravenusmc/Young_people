@@ -25,7 +25,7 @@ class Activities():
         print("10. Friends")
         print("11. Pets")
         choice = int(input("What do you want to look at: "))
-        while not subjects_valid(choice):
+        while not activity_valid(choice):
             print("That was not a valid selection!")
             choice = int(input("What do you want to look at: "))
         if choice == 1:

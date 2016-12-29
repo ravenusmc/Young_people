@@ -135,6 +135,8 @@ def choose_topic(data):
         fear.graph(data)
     elif option == 6:
         other = Others()
+        other.other_selection(data)
+        #other.graph(data)
 
 
 

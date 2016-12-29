@@ -24,7 +24,7 @@ class Fears():
         print("8. Ageing")
         print("9. Speaking")
         choice = int(input("What do you want to look at: "))
-        while not subjects_valid(choice):
+        while not fear_valid(choice):
             print("That was not a valid selection!")
             choice = int(input("What do you want to look at: "))
         if choice == 1:

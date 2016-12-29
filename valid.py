@@ -28,3 +28,21 @@ def subjects_valid(choice):
         return False
     else:
         return True
+
+def fear_valid(choice):
+    if choice > 11 or choice < 1:
+        return False
+    else:
+        return True
+
+def activity_valid(choice):
+    if choice > 11 or choice < 1:
+        return False
+    else:
+        return True
+
+def other_valid(choice):
+    if choice > 9 or choice < 1:
+        return False
+    else:
+        return True
