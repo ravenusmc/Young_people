@@ -52,9 +52,8 @@ class Subjects():
             data = data[[31]]
         elif choice == 12:
             data = data[[32]]
-            print(data)
 
-    #This function will graph the data.
+    #This method will graph the data.
     def graph(self, data):
         print("\033c")
         print("The graph will now be displayed")

@@ -124,6 +124,8 @@ def choose_topic(data):
         subject.graph(data)
     elif option == 4:
         activity = Activities()
+        activity.activity_selection(data)
+        activity.graph(data)
 
 
 main()
