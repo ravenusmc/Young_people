@@ -9,6 +9,7 @@ from movies import *
 from subjects import *
 from activities import *
 from fear import *
+from other import *
 
 #This is the main function which will start the program.
 def main():

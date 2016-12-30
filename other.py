@@ -28,27 +28,31 @@ class Others():
             print("That was not a valid selection!")
             choice = int(input("What do you want to look at: "))
         if choice == 1:
-            data = data[[44]]
-        elif choice == 2:
-            data = data[[45]]
-        elif choice == 3:
-            data = data[[46]]
-        elif choice == 4:
-            data = data[[47]]
-        elif choice == 5:
-            data = data[[48]]
-        elif choice == 6:
-            data = data[[49]]
-        elif choice == 7:
-            data = data[[50]]
-        elif choice == 8:
-            data = data[[51]]
-        elif choice == 9:
-            data = data[[52]]
-        elif choice == 10:
             data = data[[53]]
-        elif choice == 11:
+            print(data.mean())
+            input("press enter to continue")
+        elif choice == 2:
             data = data[[54]]
+        elif choice == 3:
+            data = data[[55]]
+        elif choice == 4:
+            data = data[[56]]
+        elif choice == 5:
+            data = data[[57]]
+        elif choice == 6:
+            data = data[[58]]
+        elif choice == 7:
+            data = data[[59]]
+            print(data.mean())
+            input("press enter to continue")
+        elif choice == 8:
+            data = data[[60]]
+        elif choice == 9:
+            data = data[[61]]
+        elif choice == 10:
+            data = data[[62]]
+        elif choice == 11:
+            data = data[[63]]
 
     #This method will graph the data.
     def graph(self, data):

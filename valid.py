@@ -36,7 +36,7 @@ def subjects_valid(choice):
         return True
 
 def fear_valid(choice):
-    if choice > 11 or choice < 1:
+    if choice > 9 or choice < 1:
         return False
     else:
         return True

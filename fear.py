@@ -47,10 +47,6 @@ class Fears():
             data = data[[51]]
         elif choice == 9:
             data = data[[52]]
-        elif choice == 10:
-            data = data[[53]]
-        elif choice == 11:
-            data = data[[54]]
 
     #This method will graph the data.
     def graph(self, data):
