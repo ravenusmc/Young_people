@@ -5,6 +5,12 @@ def valid_three(option):
     else:
         return False
 
+def main_menu_valid(choice):
+    if choice == 1 or choice == 2:
+        return True
+    else:
+        return False
+
 def age_validation(age):
   if age <= 0 or age >= 75:
     return False

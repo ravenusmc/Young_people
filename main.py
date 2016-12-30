@@ -4,6 +4,7 @@ import numpy as np
 
 #Importing files for use
 from valid import *
+from info import *
 from music import *
 from movies import *
 from subjects import *
@@ -19,6 +20,13 @@ def main():
     print("\t\t\t----Young People Info---")
     print("\t\t\t------------------------")
     input("\t\t\tPress enter to continue ")
+    main_menu()
+
+#This function allows the user to select the main menu
+def main_menu():
+    print("\033c")
+    info = Info()
+    info.main_menu()
     sex_selection()
 
 #This function will get the total number of individuals who did the survey

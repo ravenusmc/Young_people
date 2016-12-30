@@ -29,7 +29,9 @@ class Others():
             choice = int(input("What do you want to look at: "))
         if choice == 1:
             data = data[[53]]
-            print(data.mean())
+            mean = data.mean()
+            mean = mean[0]
+            print("The mean is ", mean)
             input("press enter to continue")
         elif choice == 2:
             data = data[[54]]
