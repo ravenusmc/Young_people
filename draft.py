@@ -8,8 +8,8 @@ data = pd.read_csv('responses.csv')
 
 data = data[data.Gender == "female"]
 data = data[data.geography == "city"]
-data = data[[33]]
-data = data[np.isfinite(data['Cars'])]
+data = data[[43]]
+data = data[np.isfinite(data['Pets'])]
 
 # data = data.mean()
 # mean = data[0]
