@@ -30,6 +30,8 @@ class Activities():
             choice = int(input("What do you want to look at: "))
         if choice == 1:
             data = data[[33]]
+            #This line I use to remove all of the NaN values.
+            data = data[np.isfinite(data['Cars'])]
         elif choice == 2:
             data = data[[34]]
         elif choice == 3:
@@ -64,6 +66,7 @@ class Activities():
             rating.append(rating_value)
             count.append(count_value)
             count_value += 1
+        rating = sorted(rating, reverse=True)
         plt.plot(count, rating, linewidth=2)
         plt.title("Activities", fontsize=24)
         plt.xlabel("Count", fontsize=14)

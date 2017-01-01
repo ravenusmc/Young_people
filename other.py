@@ -29,6 +29,7 @@ class Others():
             choice = int(input("What do you want to look at: "))
         if choice == 1:
             data = data[[53]]
+            data = data[np.isfinite(data['Appearence'])]
             mean = data.mean()
             mean = mean[0]
             print("The mean is ", mean)
@@ -49,6 +50,7 @@ class Others():
             input("press enter to continue")
         elif choice == 8:
             data = data[[60]]
+            data = data[np.isfinite(data['Spending on gadgets'])]
         elif choice == 9:
             data = data[[61]]
         elif choice == 10:
@@ -69,6 +71,8 @@ class Others():
             rating.append(rating_value)
             count.append(count_value)
             count_value += 1
+        rating = sorted(rating, reverse=True)
+        print(rating)
         plt.plot(count, rating, linewidth=2)
         plt.title("Other", fontsize=24)
         plt.xlabel("Count", fontsize=14)

@@ -8,13 +8,12 @@ data = pd.read_csv('responses.csv')
 
 data = data[data.Gender == "female"]
 data = data[data.geography == "city"]
-data = data[[0]]
+data = data[[33]]
+data = data[np.isfinite(data['Cars'])]
 
 # data = data.mean()
 # mean = data[0]
 # print(mean)
-
-
 #print(data.iat[4,0])
 
 count, rating = [], []
@@ -26,10 +25,10 @@ while count_value < len(data):
     count_value += 1
 
 rating = sorted(rating, reverse=True)
-# print(rating)
+print(rating)
 
 plt.plot(count, rating, linewidth=2)
-plt.title("Country Music", fontsize=24)
+plt.title("Graph", fontsize=24)
 plt.xlabel("Count", fontsize=14)
 plt.ylabel("Rating", fontsize=12)
 plt.show()

@@ -16,7 +16,7 @@ class Movies():
         print("1. Horror")
         print("2. Thriller")
         print("3. Comedy")
-        print("4. Romatic")
+        print("4. Romantic")
         print("5. Sci-fi")
         print("6. War")
         print("7. Fantasy")
@@ -30,27 +30,38 @@ class Movies():
             choice = int(input("What do you want to look at: "))
         if choice == 1:
             data = data[[10]]
+            #This line I use to remove all of the NaN values.
+            data = data[np.isfinite(data['Horror'])]
         elif choice == 2:
             data = data[[11]]
+            data = data[np.isfinite(data['Thriller'])]
         elif choice == 3:
             data = data[[12]]
+            data = data[np.isfinite(data['Comedy'])]
         elif choice == 4:
             data = data[[13]]
+            data = data[np.isfinite(data['Romantic'])]
         elif choice == 5:
             data = data[[14]]
+            data = data[np.isfinite(data['Sci-fi'])]
         elif choice == 6:
             data = data[[15]]
+            data = data[np.isfinite(data['War'])]
         elif choice == 7:
             data = data[[16]]
+            data = data[np.isfinite(data['Fantasy'])]
         elif choice == 8:
             data = data[[17]]
+            data = data[np.isfinite(data['Animated'])]
         elif choice == 9:
             data = data[[18]]
+            data = data[np.isfinite(data['Documentary'])]
         elif choice == 10:
             data = data[[19]]
+            data = data[np.isfinite(data['Western'])]
         elif choice == 11:
             data = data[[20]]
-            print(data)
+            data = data[np.isfinite(data['Action'])]
 
     #This function will graph the data.
     def graph(self, data):
@@ -65,6 +76,7 @@ class Movies():
             rating.append(rating_value)
             count.append(count_value)
             count_value += 1
+        rating = sorted(rating, reverse=True)
         plt.plot(count, rating, linewidth=2)
         plt.title("Movies", fontsize=24)
         plt.xlabel("Count", fontsize=14)

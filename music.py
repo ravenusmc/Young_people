@@ -30,24 +30,35 @@ class Music():
             choice = int(input("What do you want to look at: "))
         if choice == 1:
             data = data[[0]]
+            #This line I use to remove all of the NaN values. 
+            data = data[np.isfinite(data['Country'])]
         elif choice == 2:
             data = data[[1]]
+            data = data[np.isfinite(data['Classical'])]
         elif choice == 3:
             data = data[[2]]
+            data = data[np.isfinite(data['Pop'])]
         elif choice == 4:
             data = data[[3]]
+            data = data[np.isfinite(data['Rock'])]
         elif choice == 5:
             data = data[[4]]
+            data = data[np.isfinite(data['Punk'])]
         elif choice == 6:
             data = data[[5]]
+            data = data[np.isfinite(data['Hiphop'])]
         elif choice == 7:
             data = data[[6]]
+            data = data[np.isfinite(data['Swing'])]
         elif choice == 8:
             data = data[[7]]
+            data = data[np.isfinite(data['Rock'])]
         elif choice == 9:
             data = data[[8]]
+            data = data[np.isfinite(data['Alternative'])]
         elif choice == 10:
             data = data[[9]]
+            data = data[np.isfinite(data['Techno'])]
 
 
     #This function will graph the data.
@@ -63,6 +74,7 @@ class Music():
             rating.append(rating_value)
             count.append(count_value)
             count_value += 1
+        rating = sorted(rating, reverse=True)
         plt.plot(count, rating, linewidth=2)
         plt.title("Music", fontsize=24)
         plt.xlabel("Count", fontsize=14)
