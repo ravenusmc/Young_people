@@ -76,9 +76,13 @@ class Others():
             count.append(count_value)
             count_value += 1
         rating = sorted(rating, reverse=True)
-        print(rating)
         plt.plot(count, rating, linewidth=2)
         plt.title("Other", fontsize=24)
         plt.xlabel("Count", fontsize=14)
         plt.ylabel("Rating", fontsize=12)
         plt.show()
+
+    #This method will show the user the mean of each topic within
+    #each category. 
+    def show_mean():
+        print("\033c")
