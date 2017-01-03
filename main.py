@@ -12,6 +12,20 @@ from activities import *
 from fear import *
 from other import *
 
+#Functions to support the program
+def selection_function():
+    print('With your selection, What would you want to see:')
+    print('1. To see graphs')
+    print('2. To see elements in a category compared to each other')
+    print('')
+    choice = int(input('What is your choice? '))
+    while not main_menu_valid(choice):
+        print('That was not a valid selection!')
+        choice = int(input('What is your choice? '))
+    return choice
+
+
+### START OF MAIN PROGRAM FUNCTIONS:
 
 #This is the main function which will start the program.
 def main():
@@ -163,22 +177,16 @@ def choose_topic(data):
         fear.graph(data)
     elif option == 6:
         print("\033c")
-        #Turn this into a function!
-        print("With your selection, What would you want to see:")
-        print("1. To see graphs")
-        print("2. To see elements in a category compared to each other")
-        print("")
-        choice = int(input('What is your choice? '))
-        while not main_menu_valid(choice):
-            print('That was not a valid selection!')
-            choice = int(input('What is your choice? '))
-        #End function 
+        choice = selection_function()
         other = Others()
         if choice == 1:
             other.other_selection(data)
             other.graph(data)
         elif choice == 2:
-            other.
+            pass
+            #other.
+
+
 
 
 
