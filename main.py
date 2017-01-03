@@ -156,9 +156,13 @@ def choose_topic(data):
         print("That is not a valid choice!")
         option = int(input('What is your choice: '))
     if option == 1:
+        choice = selection_function()
         music = Music()
-        music.music(data)
-        music.graph(data)
+        if choice == 1:
+            music.music(data)
+            music.graph(data)
+        elif choice == 2:
+            music.show_mean(data)
     elif option == 2:
         movies = Movies()
         movies.movie_selection(data)
@@ -184,7 +188,7 @@ def choose_topic(data):
             other.graph(data)
         elif choice == 2:
             pass
-            #other.
+            #other.show_mean(data)
 
 
 

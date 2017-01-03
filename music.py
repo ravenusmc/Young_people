@@ -30,7 +30,7 @@ class Music():
             choice = int(input("What do you want to look at: "))
         if choice == 1:
             data = data[[0]]
-            #This line I use to remove all of the NaN values. 
+            #This line I use to remove all of the NaN values.
             data = data[np.isfinite(data['Country'])]
         elif choice == 2:
             data = data[[1]]
@@ -80,3 +80,18 @@ class Music():
         plt.xlabel("Count", fontsize=14)
         plt.ylabel("Rating", fontsize=12)
         plt.show()
+
+    #This method will show the user the mean of each topic within
+    #each category.
+    def show_mean(self, data):
+        print("\033c")
+        topics = ['Country', 'Classical', 'Pop', 'Rock', 'Punk', 'Hiphop', 'Swing', 'Rock', 'Alternative', 'Techno']
+        count = 0
+        for topic in topics:
+            data = data[[count]]
+            data = data[np.isfinite(data[topic])]
+            print(data)
+            # mean = data.mean()
+            # mean = mean[0]
+            # print(mean)
+            # count += 1
