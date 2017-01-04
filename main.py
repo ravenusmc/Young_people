@@ -14,6 +14,7 @@ from other import *
 
 #Functions to support the program
 def selection_function():
+    print("\033c")
     print('With your selection, What would you want to see:')
     print('1. To see graphs')
     print('2. To see elements in a category compared to each other')
@@ -125,22 +126,6 @@ def geography(data):
     elif option == 3:
         choose_topic(data)
 
-#This function will allow the user to select whether they want to see
-#graphs or numbers comparing each group.
-# def choose_data_type(data):
-#     print("\033c")
-#     print("1. To see graphs")
-#     print("2. To see elements in a category compared to each other")
-#     choice = int(input('What is your choice? '))
-#     while not main_menu_valid(choice):
-#         print('That was not a valid selection!')
-#         choice = int(input('What is your choice? '))
-#     if choice == 1:
-#         choose_topic(data)
-#     elif choice == 2:
-#         compare = Compare()
-#         compare.choose_topic(data)
-
 #This function will allow the user to choose which topic they want to
 #zoom in on.
 def choose_topic(data):
@@ -180,7 +165,6 @@ def choose_topic(data):
         fear.fear_selection(data)
         fear.graph(data)
     elif option == 6:
-        print("\033c")
         choice = selection_function()
         other = Others()
         if choice == 1:
@@ -189,9 +173,6 @@ def choose_topic(data):
         elif choice == 2:
             pass
             #other.show_mean(data)
-
-
-
 
 
 main()
