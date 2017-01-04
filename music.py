@@ -87,11 +87,14 @@ class Music():
         print("\033c")
         topics = ['Country', 'Classical', 'Pop', 'Rock', 'Punk', 'Hiphop', 'Swing', 'Rock', 'Alternative', 'Techno']
         count = 0
-        for topic in topics:
-            data = data[[count]]
-            data = data[np.isfinite(data[topic])]
-            print(data)
-            # mean = data.mean()
-            # mean = mean[0]
-            # print(mean)
-            # count += 1
+        values = []
+        data = data[np.isfinite(data['Classical'])]
+        mean = data.mean()
+        while count < 10:
+            value = mean[count]
+            values.append(value)
+            count += 1
+        mean_count = 0 
+        for topic in topics: 
+            print('The mean for', topic, 'is the following:', values[mean_count])
+            mean_count += 1

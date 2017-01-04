@@ -8,16 +8,37 @@ data = pd.read_csv('responses.csv')
 
 #data = data[data.Gender == "female"]
 #data = data[data.geography == "city"]
-
-topics = ['Country', 'Classical', 'Pop', 'Rock', 'Punk', 'Hiphop', 'Swing', 'Rock', 'Alternative', 'Techno']
 count = 0
-for topic in topics:
-    data = data[[count]]
-    print(data)
-    #data = data[np.isfinite(data[topic])]
-    # mean = data.mean()
-    # mean = mean[0]
-    # print(mean)
+values = []
+data = data[np.isfinite(data['Classical'])]
+mean = data.mean()
+while count < 10:
+  value = mean[count]
+  values.append(value)
+  count += 1
+
+
+
+# mean = mean[0]
+# print("The mean is ", mean)
+
+# count = 0
+# topics = ['Country', 'Classical', 'Pop', 'Rock', 'Punk', 'Hiphop', 'Swing', 'Rock', 'Alternative', 'Techno']
+# while count < 9:
+#     data = data[[count]]
+#     print(data.head())
+#     count += 1
+
+
+# topics = ['Country', 'Classical', 'Pop', 'Rock', 'Punk', 'Hiphop', 'Swing', 'Rock', 'Alternative', 'Techno']
+# # count = 0
+# for topic in topics:
+# #     data = data[[count]]
+# #     print(data)
+#     data = data[np.isfinite(data[topic])]
+#     mean = data.mean()
+#     mean = mean[0]
+#     print(mean)
     #count += 1
 
 
