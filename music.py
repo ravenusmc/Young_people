@@ -90,19 +90,24 @@ class Music():
         count = 0
         #This list will hold all of the mean values for each topic.
         values = []
-        data = data[np.isfinite(data['Classical'])]
+        data = data[np.isfinite(data['Country'])]
         #This mean variable will hold all of the mean values
         mean = data.mean()
         #This while loop will loop through the length of the topics list.
         while count < len(topics):
+            #This variable gets the specific value of a mean in the list
             value = mean[count]
+            #The value variable, holding a speficic mean, is then appended to a list
             values.append(value)
             count += 1
         mean_count = 0
+        #I then iterate again through the topics list to show the user where all the values are.
         for topic in topics:
             print('The mean for', topic, 'is the following:', format(values[mean_count], '.2f'))
             mean_count += 1
+        #Creating a variable to hold the max value.
         max_value = max(values)
+        #Creating a variable to hold the location of a max value
         location_max_value = values.index(max_value)
         print()
         print('The max value is', format(max_value, '.2f'), 'which is', topics[location_max_value])

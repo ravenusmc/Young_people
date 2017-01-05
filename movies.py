@@ -82,3 +82,38 @@ class Movies():
         plt.xlabel("Count", fontsize=14)
         plt.ylabel("Rating", fontsize=12)
         plt.show()
+
+    #This method will show the user the mean of each topic within
+    #each category.
+    def show_mean(self, data):
+        print("\033c")
+        #I set up a list holding all of the topics within the category
+        topics = ['Horror', 'Thriller', 'Comedy', 'Romantic', 'Sci-fi', 'War', 'Fantasy', 'Animated', 'Documentary', 'Western', 'Action', 'History']
+        count = 10
+        #This list will hold all of the mean values for each topic.
+        values = []
+        #data = data[np.isfinite(data['Horror'])]
+        #This mean variable will hold all of the mean values
+        mean = data.mean()
+        #I have to use this for loop instead of a while one to ensure that I go through
+        #each value in the list. Count will have a different starting point for each
+        #category so working with the length of the list will not work when the
+        #count is above 10.
+        for topic in topics:
+            #This variable gets the specific value of a mean in the list
+            value = mean[count]
+            #The value variable, holding a speficic mean, is then appended to a list
+            values.append(value)
+            count += 1
+        mean_count = 0
+        #I then iterate again through the topics list to show the user where all the values are.
+        for topic in topics:
+            print('The mean for', topic, 'is the following:', format(values[mean_count], '.2f'))
+            mean_count += 1
+        #Creating a variable to hold the max value.
+        max_value = max(values)
+        #Creating a variable to hold the location of a max value
+        location_max_value = values.index(max_value)
+        print()
+        print('The max value is', format(max_value, '.2f'), 'which is', topics[location_max_value])
+        print()

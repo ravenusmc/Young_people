@@ -75,7 +75,7 @@ def sex_selection():
         print("\033c")
         print('You choose to look at data for males')
         print()
-        print('There are', male_value, 'females', 'out of', total, 'people')
+        print('There are', male_value, 'males', 'out of', total, 'people')
         print()
         input("Press enter to continue ")
         age_selection(data)
@@ -149,9 +149,13 @@ def choose_topic(data):
         elif choice == 2:
             music.show_mean(data)
     elif option == 2:
+        choice = selection_function()
         movies = Movies()
-        movies.movie_selection(data)
-        movies.graph(data)
+        if choice == 1:
+            movies.movie_selection(data)
+            movies.graph(data)
+        elif choice == 2:
+            movies.show_mean(data)
     elif option == 3:
         subject = Subjects()
         subject.subject_selection(data)

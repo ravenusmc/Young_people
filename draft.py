@@ -5,18 +5,26 @@ import matplotlib.pyplot as plt
 
 data = pd.read_csv('responses.csv')
 #print(data.head())
-
-#data = data[data.Gender == "female"]
-#data = data[data.geography == "city"]
-count = 0
+data = data[data.Gender == "male"]
+data = data[data.Age >= 20]
+data = data[data.geography == "city"]
+topics = ['Horror', 'Thriller', 'Comedy', 'Romantic', 'Sci-fi', 'War', 'Fantasy', 'Animated', 'Documentary', 'Western', 'Action', 'History']
+count = 10
 values = []
-data = data[np.isfinite(data['Classical'])]
 mean = data.mean()
-while count < 10:
-  value = mean[count]
-  values.append(value)
-  count += 1
-
+for topic in topics:
+    value = mean[count]
+    values.append(value)
+    count += 1
+mean_count = 0
+for topic in topics:
+    print('The mean for', topic, 'is the following:', format(values[mean_count], '.2f'))
+    mean_count += 1
+max_value = max(values)
+location_max_value = values.index(max_value)
+print()
+print('The max value is', format(max_value, '.2f'), 'which is', topics[location_max_value])
+print()
 
 
 # mean = mean[0]
