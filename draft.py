@@ -31,13 +31,19 @@ count_value = 0
 for item in sorted_dict:
     value = sorted_dict[count_value]
     # print(low[0])
-    print('The mean for', value[1], 'is the following:', value[0])
+    #print('The mean for', value[1], 'is the following:', value[0])
     count_value += 1
 max_value = max(values)
 location_max_value = values.index(max_value)
-print()
-print('The max value is', max_value, 'which is', topics[location_max_value])
-print()
+# print()
+# print('The max value is', max_value, 'which is', topics[location_max_value])
+# print()
+
+print(mean.head())
+ax = mean[['Country', 'Classical', 'Pop', 'Rock', 'Punk', 'Hiphop', 'Swing', 'Alternative', 'Techno']].plot(kind='bar', title ="Music", figsize=(10, 9), legend=True, fontsize=12)
+ax.set_xlabel("Music Type", fontsize=12)
+ax.set_ylabel("Rating", fontsize=12)
+plt.show()
 
 # worst = sorted([(value,key) for (key,value) in topic_mean_dict.items()], reverse=True)
 # count = 0

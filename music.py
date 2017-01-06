@@ -116,3 +116,11 @@ class Music():
         print()
         print('The max value is', max_value, 'which is', topics[location_max_value])
         print()
+        return mean
+
+    #This method will allow the user to see graphs of the mean values.
+    def graph_of_means(self, data, mean):
+        print("\033c")
+        print("The graph will now be displayed")
+        print("In order to move on, you must close the graph")
+        input("Press Enter to continue ")

@@ -147,7 +147,8 @@ def choose_topic(data):
             music.music(data)
             music.graph(data)
         elif choice == 2:
-            music.show_mean(data)
+            mean = music.show_mean(data)
+            print(mean.head())
     elif option == 2:
         choice = selection_function()
         movies = Movies()
