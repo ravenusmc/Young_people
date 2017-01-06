@@ -2,6 +2,11 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import collections
+
+# prac = {}
+# prac['topic'] = 'Horror'
+# print(prac)
 
 data = pd.read_csv('responses.csv')
 #print(data.head())
@@ -14,61 +19,35 @@ values = []
 mean = data.mean()
 for topic in topics:
     value = mean[count]
-    values.append(value)
+    values.append(format(value, '.2f'))
     count += 1
 mean_count = 0
+topic_mean_dict = {}
 for topic in topics:
-    print('The mean for', topic, 'is the following:', format(values[mean_count], '.2f'))
+    topic_mean_dict[topic] = values[mean_count]
     mean_count += 1
+sorted_dict = sorted([(value,key) for (key,value) in topic_mean_dict.items()], reverse=True)
+count_value = 0
+for item in sorted_dict:
+    value = sorted_dict[count_value]
+    # print(low[0])
+    print('The mean for', value[1], 'is the following:', value[0])
+    count_value += 1
 max_value = max(values)
 location_max_value = values.index(max_value)
-print()
-print('The max value is', format(max_value, '.2f'), 'which is', topics[location_max_value])
-print()
+# print()
+# print('The max value is', format(max_value, '.2f'), 'which is', topics[location_max_value])
+# print()
 
-
-# mean = mean[0]
-# print("The mean is ", mean)
-
+# worst = sorted([(value,key) for (key,value) in topic_mean_dict.items()], reverse=True)
 # count = 0
-# topics = ['Country', 'Classical', 'Pop', 'Rock', 'Punk', 'Hiphop', 'Swing', 'Rock', 'Alternative', 'Techno']
-# while count < 9:
-#     data = data[[count]]
-#     print(data.head())
+# for item in worst:
+#     low = worst[count]
+#     # print(low[0])
+#     print('The mean for', low[1], 'is the following:', low[0])
 #     count += 1
 
-
-# topics = ['Country', 'Classical', 'Pop', 'Rock', 'Punk', 'Hiphop', 'Swing', 'Rock', 'Alternative', 'Techno']
-# # count = 0
-# for topic in topics:
-# #     data = data[[count]]
-# #     print(data)
-#     data = data[np.isfinite(data[topic])]
-#     mean = data.mean()
-#     mean = mean[0]
-#     print(mean)
-    #count += 1
-
-
-
-
-# data = data.mean()
-# mean = data[0]
-# print(mean)
-#print(data.iat[4,0])
-
-# count, rating = [], []
-# count_value = 0
-# while count_value < len(data):
-#     rating_value = data.iat[count_value, 0]
-#     rating.append(rating_value)
-#     count.append(count_value)
-#     count_value += 1
-#
-# rating = sorted(rating, reverse=True)
-#
-# plt.plot(count, rating, linewidth=2)
-# plt.title("Graph", fontsize=24)
-# plt.xlabel("Count", fontsize=14)
-# plt.ylabel("Rating", fontsize=12)
-# plt.show()
+# low = worst[0]
+# print(low[1])
+# for key in topic_mean_dict:
+#     print('The mean for', key, 'is the following:', topic_mean_dict[key])

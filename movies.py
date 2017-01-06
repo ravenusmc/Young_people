@@ -98,22 +98,32 @@ class Movies():
         #I have to use this for loop instead of a while one to ensure that I go through
         #each value in the list. Count will have a different starting point for each
         #category so working with the length of the list will not work when the
-        #count is above 10.
+        #count is above 10
         for topic in topics:
             #This variable gets the specific value of a mean in the list
             value = mean[count]
             #The value variable, holding a speficic mean, is then appended to a list
-            values.append(value)
+            values.append(format(value, '.2f'))
             count += 1
         mean_count = 0
-        #I then iterate again through the topics list to show the user where all the values are.
+        #Here I am setting up a dictionary to combine the mean with its topic
+        topic_mean_dict = {}
+        #I loop through the topics list to combine a topic with its mean
         for topic in topics:
-            print('The mean for', topic, 'is the following:', format(values[mean_count], '.2f'))
+            topic_mean_dict[topic] = values[mean_count]
             mean_count += 1
+        #This variable will hold the new variable of my sorted dicitionary list.
+        sorted_dict = sorted([(value,key) for (key,value) in topic_mean_dict.items()], reverse=True)
+        count_value = 0
+        #I then iterate again through the topics list to show the user where all the values are.
+        for item in sorted_dict:
+            value = sorted_dict[count_value]
+            print('The mean for', value[1], 'is the following:', value[0])
+            count_value += 1
         #Creating a variable to hold the max value.
         max_value = max(values)
         #Creating a variable to hold the location of a max value
         location_max_value = values.index(max_value)
         print()
-        print('The max value is', format(max_value, '.2f'), 'which is', topics[location_max_value])
+        print('The max value is', max_value, 'which is', topics[location_max_value])
         print()
