@@ -11,10 +11,10 @@ import collections
 data = pd.read_csv('responses.csv')
 #print(data.head())
 data = data[data.Gender == "male"]
-data = data[data.Age >= 20]
+data = data[data.Age >= 15]
 data = data[data.geography == "city"]
-topics = ['Horror', 'Thriller', 'Comedy', 'Romantic', 'Sci-fi', 'War', 'Fantasy', 'Animated', 'Documentary', 'Western', 'Action', 'History']
-count = 10
+topics = ['Country', 'Classical', 'Pop', 'Rock', 'Punk', 'Hiphop', 'Swing', 'Alternative', 'Techno']
+count = 0
 values = []
 mean = data.mean()
 for topic in topics:
@@ -35,9 +35,9 @@ for item in sorted_dict:
     count_value += 1
 max_value = max(values)
 location_max_value = values.index(max_value)
-# print()
-# print('The max value is', format(max_value, '.2f'), 'which is', topics[location_max_value])
-# print()
+print()
+print('The max value is', max_value, 'which is', topics[location_max_value])
+print()
 
 # worst = sorted([(value,key) for (key,value) in topic_mean_dict.items()], reverse=True)
 # count = 0

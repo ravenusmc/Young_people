@@ -24,7 +24,7 @@ def valid_choice(option):
         return True
 
 def music_valid(choice):
-  if choice > 10 or choice < 1:
+  if choice > 9 or choice < 1:
     return False
   else:
     return True

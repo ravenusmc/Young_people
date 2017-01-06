@@ -29,38 +29,38 @@ class Activities():
             print("That was not a valid selection!")
             choice = int(input("What do you want to look at: "))
         if choice == 1:
-            data = data[[33]]
+            data = data[[32]]
             #This line I use to remove all of the NaN values.
             data = data[np.isfinite(data['Cars'])]
         elif choice == 2:
-            data = data[[34]]
+            data = data[[33]]
             data = data[np.isfinite(data['Art'])]
         elif choice == 3:
-            data = data[[35]]
+            data = data[[34]]
             data = data[np.isfinite(data['Religion'])]
         elif choice == 4:
-            data = data[[36]]
+            data = data[[35]]
             data = data[np.isfinite(data['Dancing'])]
         elif choice == 5:
-            data = data[[37]]
+            data = data[[36]]
             data = data[np.isfinite(data['Music'])]
         elif choice == 6:
-            data = data[[38]]
+            data = data[[37]]
             data = data[np.isfinite(data['Writing'])]
         elif choice == 7:
-            data = data[[39]]
+            data = data[[38]]
             data = data[np.isfinite(data['Gardening'])]
         elif choice == 8:
-            data = data[[40]]
+            data = data[[39]]
             data = data[np.isfinite(data['Shopping'])]
         elif choice == 9:
-            data = data[[41]]
+            data = data[[40]]
             data = data[np.isfinite(data['Theatre'])]
         elif choice == 10:
-            data = data[[42]]
+            data = data[[41]]
             data = data[np.isfinite(data['Friends'])]
         elif choice == 11:
-            data = data[[43]]
+            data = data[[42]]
             data = data[np.isfinite(data['Pets'])]
 
     #This method will graph the data.

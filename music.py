@@ -21,9 +21,8 @@ class Music():
         print("5. Punk")
         print("6. HipHop")
         print("7. Swing")
-        print("8. Rock")
-        print("9. Alternative")
-        print("10. Techno")
+        print("8. Alternative")
+        print("9. Techno")
         choice = int(input("What do you want to look at: "))
         while not music_valid(choice):
             print("That is not a valid selection")
@@ -52,12 +51,9 @@ class Music():
             data = data[np.isfinite(data['Swing'])]
         elif choice == 8:
             data = data[[7]]
-            data = data[np.isfinite(data['Rock'])]
+            data = data[np.isfinite(data['Alternative'])]
         elif choice == 9:
             data = data[[8]]
-            data = data[np.isfinite(data['Alternative'])]
-        elif choice == 10:
-            data = data[[9]]
             data = data[np.isfinite(data['Techno'])]
 
 
@@ -86,29 +82,37 @@ class Music():
     def show_mean(self, data):
         print("\033c")
         #I set up a list holding all of the topics within the category
-        topics = ['Country', 'Classical', 'Pop', 'Rock', 'Punk', 'Hiphop', 'Swing', 'Rock', 'Alternative', 'Techno']
+        topics = ['Country', 'Classical', 'Pop', 'Rock', 'Punk', 'Hiphop', 'Swing', 'Alternative', 'Techno']
         count = 0
         #This list will hold all of the mean values for each topic.
         values = []
-        data = data[np.isfinite(data['Country'])]
         #This mean variable will hold all of the mean values
         mean = data.mean()
-        #This while loop will loop through the length of the topics list.
-        while count < len(topics):
+        for topic in topics:
             #This variable gets the specific value of a mean in the list
             value = mean[count]
             #The value variable, holding a speficic mean, is then appended to a list
-            values.append(value)
+            values.append(format(value, '.2f'))
             count += 1
         mean_count = 0
-        #I then iterate again through the topics list to show the user where all the values are.
+        #Here I am setting up a dictionary to combine the mean with its topic
+        topic_mean_dict = {}
+        #I loop through the topics list to combine a topic with its mean
         for topic in topics:
-            print('The mean for', topic, 'is the following:', format(values[mean_count], '.2f'))
+            topic_mean_dict[topic] = values[mean_count]
             mean_count += 1
+        #This variable will hold the new variable of my sorted dicitionary list.
+        sorted_dict = sorted([(value,key) for (key,value) in topic_mean_dict.items()], reverse=True)
+        count_value = 0
+        #I then iterate again through the topics list to show the user where all the values are.
+        for item in sorted_dict:
+            value = sorted_dict[count_value]
+            print('The mean for', value[1], 'is the following:', value[0])
+            count_value += 1
         #Creating a variable to hold the max value.
         max_value = max(values)
         #Creating a variable to hold the location of a max value
         location_max_value = values.index(max_value)
         print()
-        print('The max value is', format(max_value, '.2f'), 'which is', topics[location_max_value])
+        print('The max value is', max_value, 'which is', topics[location_max_value])
         print()

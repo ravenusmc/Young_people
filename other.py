@@ -28,7 +28,7 @@ class Others():
             print("That was not a valid selection!")
             choice = int(input("What do you want to look at: "))
         if choice == 1:
-            data = data[[53]]
+            data = data[[52]]
             #This line I use to remove all of the NaN values.
             data = data[np.isfinite(data['Appearence'])]
             mean = data.mean()
@@ -36,30 +36,30 @@ class Others():
             print("The mean is ", mean)
             input("press enter to continue")
         elif choice == 2:
-            data = data[[54]]
+            data = data[[53]]
             data = data[np.isfinite(data['Socializing'])]
         elif choice == 3:
-            data = data[[55]]
+            data = data[[54]]
             data = data[np.isfinite(data['Finances'])]
         elif choice == 4:
-            data = data[[56]]
+            data = data[[55]]
             data = data[np.isfinite(data['Malls'])]
         elif choice == 5:
-            data = data[[57]]
+            data = data[[56]]
             data = data[np.isfinite(data['Name-Brand-Clothing'])]
         elif choice == 6:
-            data = data[[58]]
+            data = data[[57]]
             data = data[np.isfinite(data['Entertainment spending'])]
         elif choice == 7:
-            data = data[[59]]
+            data = data[[58]]
             data = data[np.isfinite(data['Spending on looks'])]
             print(data.mean())
             input("press enter to continue")
         elif choice == 8:
-            data = data[[60]]
+            data = data[[59]]
             data = data[np.isfinite(data['Spending on gadgets'])]
         elif choice == 9:
-            data = data[[61]]
+            data = data[[60]]
             data = data[np.isfinite(data['Spending on healthy eating'])]
 
     #This method will graph the data.
@@ -83,6 +83,6 @@ class Others():
         plt.show()
 
     #This method will show the user the mean of each topic within
-    #each category. 
+    #each category.
     def show_mean():
         print("\033c")
