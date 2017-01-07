@@ -168,9 +168,14 @@ def choose_topic(data):
             mean = subject.show_mean(data)
             subject.graph_of_means(data, mean)
     elif option == 4:
+        choice = selection_function()
         activity = Activities()
-        activity.activity_selection(data)
-        activity.graph(data)
+        if choice == 1:
+            activity.activity_selection(data)
+            activity.graph(data)
+        elif choice == 2:
+            mean = activity.show_mean(data)
+            activity.graph_of_means(data, mean)
     elif option == 5:
         fear = Fears()
         fear.fear_selection(data)
