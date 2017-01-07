@@ -88,7 +88,7 @@ class Movies():
     def show_mean(self, data):
         print("\033c")
         #I set up a list holding all of the topics within the category
-        topics = ['Horror', 'Thriller', 'Comedy', 'Romantic', 'Sci-fi', 'War', 'Fantasy', 'Animated', 'Documentary', 'Western', 'Action', 'History']
+        topics = ['Horror', 'Thriller', 'Comedy', 'Romantic', 'Sci-fi', 'War', 'Fantasy', 'Animated', 'Documentary', 'Western', 'Action']
         count = 9
         #This list will hold all of the mean values for each topic.
         values = []
@@ -127,3 +127,16 @@ class Movies():
         print()
         print('The max value is', max_value, 'which is', topics[location_max_value])
         print()
+        input("Press Enter to continue ")
+        return mean
+
+    #This method will allow the user to see graphs of the mean values.
+    def graph_of_means(self, data, mean):
+        print("\033c")
+        print("The graph will now be displayed")
+        print("In order to move on, you must close the graph")
+        input("Press Enter to continue ")
+        graph_data = mean[['Horror', 'Thriller', 'Comedy', 'Romantic', 'Sci-fi', 'War', 'Fantasy', 'Animated', 'Documentary', 'Western', 'Action']].plot(kind='bar', title ="Music", figsize=(10, 9), legend=True, fontsize=12)
+        graph_data.set_xlabel("Movie Type", fontsize=12)
+        graph_data.set_ylabel("Rating", fontsize=12)
+        plt.show()

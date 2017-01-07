@@ -156,11 +156,17 @@ def choose_topic(data):
             movies.movie_selection(data)
             movies.graph(data)
         elif choice == 2:
-            movies.show_mean(data)
+            mean = movies.show_mean(data)
+            movies.graph_of_means(data, mean)
     elif option == 3:
+        choice = selection_function()
         subject = Subjects()
-        subject.subject_selection(data)
-        subject.graph(data)
+        if choice == 1:
+            subject.subject_selection(data)
+            subject.graph(data)
+        elif choice == 2:
+            mean = subject.show_mean(data)
+            subject.graph_of_means(data, mean)
     elif option == 4:
         activity = Activities()
         activity.activity_selection(data)
