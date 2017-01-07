@@ -116,6 +116,7 @@ class Music():
         print()
         print('The max value is', max_value, 'which is', topics[location_max_value])
         print()
+        input("Press Enter to continue ")
         return mean
 
     #This method will allow the user to see graphs of the mean values.
@@ -124,3 +125,7 @@ class Music():
         print("The graph will now be displayed")
         print("In order to move on, you must close the graph")
         input("Press Enter to continue ")
+        ax = mean[['Country', 'Classical', 'Pop', 'Rock', 'Punk', 'Hiphop', 'Swing', 'Alternative', 'Techno']].plot(kind='bar', title ="Music", figsize=(10, 9), legend=True, fontsize=12)
+        ax.set_xlabel("Music Type", fontsize=12)
+        ax.set_ylabel("Rating", fontsize=12)
+        plt.show()

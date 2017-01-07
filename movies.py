@@ -89,7 +89,7 @@ class Movies():
         print("\033c")
         #I set up a list holding all of the topics within the category
         topics = ['Horror', 'Thriller', 'Comedy', 'Romantic', 'Sci-fi', 'War', 'Fantasy', 'Animated', 'Documentary', 'Western', 'Action', 'History']
-        count = 10
+        count = 9
         #This list will hold all of the mean values for each topic.
         values = []
         #data = data[np.isfinite(data['Horror'])]
