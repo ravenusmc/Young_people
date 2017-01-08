@@ -122,3 +122,14 @@ class Fears():
         print()
         input("Press Enter to continue ")
         return mean
+
+    #This method will allow the user to see graphs of the mean values.
+    def graph_of_means(self, data, mean):
+        print("\033c")
+        print("The graph will now be displayed")
+        print("In order to move on, you must close the graph")
+        input("Press Enter to continue ")
+        graph_data = mean[['Flying', 'Storm', 'Darkness', 'Heights', 'Spiders', 'Snakes', 'Rats', 'Ageing', 'Speaking']].plot(kind='bar', title ="Music", figsize=(10, 9), legend=True, fontsize=12)
+        graph_data.set_xlabel("Fear Type", fontsize=12)
+        graph_data.set_ylabel("Rating", fontsize=12)
+        plt.show()

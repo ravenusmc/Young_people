@@ -184,7 +184,7 @@ def choose_topic(data):
             fear.graph(data)
         elif choice == 2:
             mean = fear.show_mean(data)
-            
+            fear.graph_of_means(data, mean)
     elif option == 6:
         choice = selection_function()
         other = Others()
