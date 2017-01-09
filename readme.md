@@ -12,7 +12,13 @@ I have been working on this project for about two weeks now and I will have
 to say that how I set up my classes-well I am not sure if that is the correct
 design. However, it works for me for my purposes. If one looks at a file, such
 as fear.py, they will see I have a class set up. How I use that class in the
-main file, in regards to design, not sure if it is right. 
+main file, in regards to design, not sure if it is right.
+
+This project, in some ways, has become much better than I thought. I actually ended
+up doing a lot more with the data then I thought that I would. However, saying all of that,
+I will say that I repeat myself quite a lot in this project. I also really did
+not design this project that well. (Kind of a problem when you are not exactly sure
+what you want to do with the data and keep adding elements to it as you work on it!)
 
 
 # Getting started
