@@ -97,6 +97,7 @@ def sex_selection():
 def age_selection(data):
     print("\033c")
     print("Age selection screen")
+    print("The age entered will pull data for that age and everything above it")
     age = int(input("Please enter an age that you want to look at: "))
     while not age_validation(age):
         print("That is not an acceptable age")
