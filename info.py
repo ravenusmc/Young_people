@@ -13,7 +13,7 @@ class Info():
             print("That is not a proper selection")
             choice = int(input("What is your choice? "))
         if choice == 1:
-            print("You will not be heading to choose sex")
+            print("You will now be heading to choose sex")
             input("Press enter to continue ")
         elif choice == 2:
             info = Info()

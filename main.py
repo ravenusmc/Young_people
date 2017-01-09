@@ -25,7 +25,6 @@ def selection_function():
         choice = int(input('What is your choice? '))
     return choice
 
-
 ### START OF MAIN PROGRAM FUNCTIONS:
 
 #This is the main function which will start the program.
@@ -192,8 +191,8 @@ def choose_topic(data):
             other.other_selection(data)
             other.graph(data)
         elif choice == 2:
-            pass
-            #other.show_mean(data)
+            mean = other.show_mean(data)
+            other.graph_of_means(data, mean)
 
 
 main()
